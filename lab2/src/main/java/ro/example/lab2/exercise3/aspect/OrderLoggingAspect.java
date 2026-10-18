@@ -16,9 +16,8 @@ public class OrderLoggingAspect {
 
     // 1. Before: executat inainte de metoda
     @Before("orderMethods()")
-    public void logBefore(JoinPoint joinPoint) {
-        System.out.println("[AOP] Before: "
-                + joinPoint.getSignature().getName());
+    public void logBefore() {
+        System.out.println("[AOP] Before: Placing order...");
     }
 
     // 2. AfterReturning: executat doar la succes
@@ -36,9 +35,8 @@ public class OrderLoggingAspect {
 
     // 4. After: executat indiferent de rezultat
     @After("orderMethods()")
-    public void logAfter(JoinPoint joinPoint) {
-        System.out.println("[AOP] After: "
-                + joinPoint.getSignature().getName());
+    public void logAfter() {
+        System.out.println("[AOP] After: Order processing finished.");
     }
 
     // 5. Around: masoara timpul de executie
